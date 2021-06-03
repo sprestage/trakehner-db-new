@@ -1,0 +1,45 @@
+<div>
+
+  <table class="horse_index">
+    <thead>
+      <tr>
+        <th class="text-center"></th>
+        <th class="text-center"><%= t 'horses_index.trakehner_name' %></th>
+        <th><%= t 'horses_index.sex' %></th>
+        <th>YOB</th>
+        <th class="text-center"><%= t 'horses_index.sire' %></th>
+        <th class="text-center"><%= t 'horses_index.dam' %></th>
+        <th><%= t 'horses_index.color' %></th>
+        <!-- TODO: When we finally get Height implemented, put it here -->
+      </tr>
+    </thead>
+
+    <tbody>
+      <% horses.each do |horse| %>
+        <tr id="<%= horse.id %>">
+          <% if horse.image_url %>
+            <td><%= image_tag horse.image_url(:thumbnail).to_s %></td>
+          <% else %>
+            <td></td>
+          <% end %>
+          <td><%= link_to horse.name, horse %></td>
+          <td>
+            <% if horse.sex == "S" %>
+              <%= t "gender.stallion" %>
+            <% elsif horse.sex == "M" %>
+              <%= t "gender.mare" %>
+            <% elsif horse.sex == "G" %>
+              <%= t "gender.gelding" %>
+            <% else %>
+              <%= horse.sex %>
+            <% end %>
+          </td>
+          <td><%= horse.birth_year %></td>
+          <td><%= link_to horse.sire.name, horse.sire %></td>
+          <td><%= link_to horse.dam.name, horse.dam %></td>
+          <td><%= horse.color %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

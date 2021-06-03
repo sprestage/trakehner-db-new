@@ -16,6 +16,16 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+# Use coveralls to display code coverage percentage badge on readme
+gem 'coveralls', require: false
+
+gem 'fog-aws'
+gem 'carrierwave'
+# Image manipulation (resizing)
+gem "rmagick", :require => false
+
+
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -39,6 +49,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'minitest-happy'
+
+  # Adds support for Capybara system testing and selenium driver
+  gem 'minitest-rails'
+  # gem 'minitest-rails-capybara'
+  # gem 'capybara', '>= 2.15'
 end
 
 group :development do
@@ -49,18 +65,13 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
+  gem 'pry-doc'
 end
 
 group :test do
   gem 'simplecov', require: false
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
 
-  gem 'selenium-webdriver'
-  # gem 'poltergeist'
-
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'webdrivers', '~> 3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

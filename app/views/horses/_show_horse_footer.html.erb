@@ -1,0 +1,7 @@
+
+<div class="center">
+  <% if policy(Breeder).update? %>
+    <%= link_to t('shared.edit'), edit_horse_path(@horse), id: "edit_horse_link" %> |
+  <% end %>
+  <%= link_to t('shared.back'), horses_path %>
+</div>

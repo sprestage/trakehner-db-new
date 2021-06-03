@@ -30,4 +30,51 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  sidebar:
+    has_image: "Has image"
+    search: "Search"
+    horse: "Horse"
+    horses: "Horses"
+    breeders: "Breeders"
+    about: "About"
+    contact: "Contact"
+    log_in: "Log In"
+    sign_out: "Sign Out"
+
+  gender:
+    stallion: "Stallion"
+    mare: "Mare"
+    gelding: "Gelding"
+    colt: "Colt"
+    filly: "Filly"
+    foal: "Foal"
+
+  horses_index:
+    trakehner_name: "Trakehner Name"
+    trakehner_horses: "Trakehner Horses"
+    sex: "Sex"
+    sire: "Sire"
+    dam: "Dam"
+    color: "Color"
+    unknown: "Unknown"
+    performance_records_available: "Performance records available"
+
+  breeders_index:
+    trakehner_breeder: "Trakehner Breeder"
+
+  shared:
+    unofficial_trakehner_database: "The Unofficial Trakehner Database"
+    copyright: "Copyright"
+    logged_in_as: "Logged in as"
+    and: 'and'
+    edit: 'Edit'
+    back: 'Back'
+
+  pedigree:
+    show_pedigree: "Show Pedigree"
+    show_progeny: "Show Progeny"
+    no_known_progeny: "No known progeny"
+
+  static_pages:
+    contact_us: 'Contact Us'
+    about_us: 'About Us'
