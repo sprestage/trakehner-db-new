@@ -5,6 +5,19 @@
 # The Unofficial Trakehner Database
 
 
+Lastest News
+=======
+**June 2021**
+The Unofficial Trakehner Database site has been down for a while now.  I would like
+to extend my apologies to those who use the site.  Technology continues to grow and
+change, which in this case, took down the UTDB site when the hosting platform
+advanced beyond the capabilities of the technologies used in the original creation
+of the site.  The good news is that I am actively working again to bring back this
+marvelous tool for all those who love and admire the Trakehner horse.  Please be
+patient with me and know that I am committed to this project.
+
+
+
 Project Idea
 =======
 To implement a website for the Trakehner horse enthusiast, with emphasis for Trakehner breeders.
@@ -30,7 +43,7 @@ This site is my solution to those problems.
 Technical Details
 =======
 
-Uses Rails 5.2.5 and Ruby 2.5.1
+Uses Rails 5.2.6 and Ruby 2.5.1
 
 
 Deployment
