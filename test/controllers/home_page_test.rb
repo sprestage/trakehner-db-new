@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TrakehnerFlowTest < ActionDispatch::IntegrationTest
+class HomePageTest < ActionDispatch::IntegrationTest
   test "Home page contains text" do
     visit root_path
     assert_includes(body, "Horse")
