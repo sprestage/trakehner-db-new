@@ -17,7 +17,6 @@ marvelous tool for all those who love and admire the Trakehner horse.  Please be
 patient with me and know that I am committed to this project.
 
 
-
 Project Idea
 =======
 To implement a website for the Trakehner horse enthusiast, with emphasis for Trakehner breeders.
@@ -48,8 +47,38 @@ Uses Rails 5.2.6 and Ruby 2.5.1
 
 Deployment
 =======
-This project has been deployed to Heroku and can be found here: http://trakehner-db.herokuapp.com.
+This project has been deployed to Heroku and can be found here: http://trakehner-db-new.herokuapp.com.
 Heroku also points to the custom domain http://www.unofficialtrakehnerdatabase.com.
+
+
+Tasks and technical observations
+=======
+It appears that rails 5 no longer supports multiple foreign_keys.  This introduces a challenge of how to correctly associate a give horse with its sire (father) and dam (mother).  Looking around, I have found the 'ancestry' gem which looks like a way to solve this need.
+
+Glad to see the devise gem is still maintained.  For now, I plan to remove authorization and re-implement it later.  I plan to comment out the small devise-related lines and delete the big devise-related blocks.  Re-implementation may or may not be needed.  The original concept for this site included the power to add, edit, and upload images.  It will be a future decision whether or not to allow this in the future.  It is worth noting that the UTDB is 8 years out of date, so either new horses/breeders/images will need to be addable or a new scraping of the ATA site data will need to occur.
+
+- [x] Re-implement basic site
+- [x] Re-add static pages
+- [x] Re-add internationalization
+- [x] Deploy new UTDB to production with note of explanation
+- [x] Re-implement fonts
+- [x] Remove or comment out all devise and auth-related code related to Horse model
+- [x] Re-add model for Horses
+- [x] Re-add controller for Horses
+- [x] Re-add migrations for Horses
+- [x] Confirm database functionality and implementation of the Horse migrations
+- [ ] Re-add views for Horses
+- [ ] Confirm functionality of Horse views
+- [ ] Implement ancestry gem for Horses
+- [ ] Re-implement image uploader for Horses
+- [ ] Re-implement ATA logo
+- [ ] Remove or comment out all devise and auth-related code related to Breeder model
+- [ ] Re-add model for Breeders
+- [ ] Re-add controller for Breeders
+- [ ] Re-add migrations for Breeders
+- [ ] Confirm database functionality and implementation of the Breeder migrations
+- [ ] Re-add views for Breeders
+- [ ] Confirm functionality of Horse views
 
 
 Policy and roles plan
