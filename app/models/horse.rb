@@ -6,7 +6,7 @@ class Horse < ActiveRecord::Base
 
   belongs_to :sire, class_name: "Horse", foreign_key: :sire_id
   belongs_to :dam, class_name: "Horse", foreign_key: :dam_id
-  # belongs_to :breeder
+  belongs_to :breeder
 
   validates :name, presence: true
   validates :name, uniqueness: true
@@ -59,7 +59,7 @@ class Horse < ActiveRecord::Base
     horse.sire = get_parent(record["sire"])
     horse.dam = get_parent(record["dam"])
 
-    # horse.breeder = Breeder.fetch(record["breeder"])
+    horse.breeder = Breeder.fetch(record["breeder"])
 
     ###
     # The schema shows .performance_records_available to be a boolean.  However, it isn't

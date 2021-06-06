@@ -73,18 +73,18 @@ Glad to see the devise gem is still maintained.  For now, I plan to remove autho
 - [x] Confirm functionality and fix issues for Show Horse, without image(s)
 - [x] Re-implement image uploader for Horses.  This is already done.  All images and thumbnails are stored in AWS S3.  When the json is imported into the database, the URLs for images and thumbnails are populated accordingly.    Here is an example thumbnails - https://unofficialtrakehnerdb.s3-us-west-2.amazonaws.com/uploads/horse/image/1001/thumbnail_Martini.jpg
 - [x] Re-implement ATA logo on Show Horses page
-- [ ] Confirm functionality and fix issues for Show Horse, with image(s)
+- [x] Confirm functionality and fix issues for Show Horse, with image(s)
+- [x] Remove or comment out all devise and auth-related code related to Breeder model
+- [x] Re-add model for Breeders
+- [x] Re-add controller for Breeders
+- [x] Re-add migrations for Breeders
+- [x] Confirm database functionality and implementation of the Breeder migrations
+- [x] Re-add Index Breeders view
+- [x] Re-add Show Breeder view
+- [x] Confirm functionality of Breeder views (index, show)
 - [ ] Implement ancestry gem for Horses
 - [ ] Re-implement ATA logo on home page
 - [ ] Re-implement ATA logo on Index Horses page
-- [ ] Remove or comment out all devise and auth-related code related to Breeder model
-- [ ] Re-add model for Breeders
-- [ ] Re-add controller for Breeders
-- [ ] Re-add migrations for Breeders
-- [ ] Confirm database functionality and implementation of the Breeder migrations
-- [ ] Re-add Index Breeders view
-- [ ] Re-add Show Breeder view
-- [ ] Confirm functionality of Breeder views (index, show, image)
 
 
 Policy and roles plan

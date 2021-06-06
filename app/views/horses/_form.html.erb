@@ -5,7 +5,7 @@
   <%= f.input :birth_year, collection: 1925..2025 %><br>
   <%= f.input :color %><br>
   <%= f.input :sex, label: "Gender", collection: ["Mare", "Stallion", "Gelding"], as: :radio_buttons %><br>
-  <%# <%= f.association :breeder %><br><br> %>
+  <%= f.association :breeder %><br><br>
   <%= f.input :image %><br><br>
   <%= f.error :base %>
   <%= f.button :submit %><br><br>
