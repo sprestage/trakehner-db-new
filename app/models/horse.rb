@@ -100,7 +100,7 @@ class Horse < ActiveRecord::Base
       horse = Horse.new
       horse.name = record["name"]
     end
-    horse.remote_image_url = record["image"]
+    horse.image = record["image"]
 
     if horse.save
       # Do nothing if the save is successful.
