@@ -67,18 +67,24 @@ Glad to see the devise gem is still maintained.  For now, I plan to remove autho
 - [x] Re-add controller for Horses
 - [x] Re-add migrations for Horses
 - [x] Confirm database functionality and implementation of the Horse migrations
-- [ ] Re-add views for Horses
-- [ ] Confirm functionality of Horse views
+- [x] Re-add Index Horses view
+- [x] Re-add Show Horse view
+- [x] Confirm functionality and fix issues for Index of Horses, with and without thumbnail
+- [x] Confirm functionality and fix issues for Show Horse, without image(s)
+- [x] Re-implement image uploader for Horses.  This is already done.  All images and thumbnails are stored in AWS S3.  When the json is imported into the database, the URLs for images and thumbnails are populated accordingly.    Here is an example thumbnails - https://unofficialtrakehnerdb.s3-us-west-2.amazonaws.com/uploads/horse/image/1001/thumbnail_Martini.jpg
+- [x] Re-implement ATA logo on Show Horses page
+- [ ] Confirm functionality and fix issues for Show Horse, with image(s)
 - [ ] Implement ancestry gem for Horses
-- [ ] Re-implement image uploader for Horses
-- [ ] Re-implement ATA logo
+- [ ] Re-implement ATA logo on home page
+- [ ] Re-implement ATA logo on Index Horses page
 - [ ] Remove or comment out all devise and auth-related code related to Breeder model
 - [ ] Re-add model for Breeders
 - [ ] Re-add controller for Breeders
 - [ ] Re-add migrations for Breeders
 - [ ] Confirm database functionality and implementation of the Breeder migrations
-- [ ] Re-add views for Breeders
-- [ ] Confirm functionality of Horse views
+- [ ] Re-add Index Breeders view
+- [ ] Re-add Show Breeder view
+- [ ] Confirm functionality of Breeder views (index, show, image)
 
 
 Policy and roles plan
@@ -138,13 +144,16 @@ To start postgresql, use a command like this:
 ~~~~
 
 
+Good advice on where to store the various different types of tests: https://guides.rubyonrails.org/testing.html#rails-sets-up-for-testing-from-the-word-go
+
+
 Common runtime errors seen
 =======
-This one is caused by having no horses in the database.
+This one is caused by having no horses in the database.  Or possibly having horses, but none with an image.
 ~~~~
   Showing /Users/susan/Documents/myProjects/codefellows/trakehner-db/app/views/home/index.html.erb where line #17 raised:
 
-  undefined method `image_url' for nil:NilClass
+  undefined method `image' for nil:NilClass
 ~~~~
 Fix by running
 ~~~~
