@@ -82,49 +82,38 @@ Glad to see the devise gem is still maintained.  For now, I plan to remove autho
 - [x] Re-add Index Breeders view
 - [x] Re-add Show Breeder view
 - [x] Confirm functionality of Breeder views (index, show)
+- [x] Re-implement Horse tests
+- [x] Re-implement Breeder tests
+- [ ] Re-implement population of database with horses and breeders from json
 - [ ] Implement ancestry gem for Horses
+- [ ] Re-implement pedigree
 - [ ] Re-implement ATA logo on home page
 - [ ] Re-implement ATA logo on Index Horses page
-
-
-Policy and roles plan
-=======
-
-<pre>
-Five roles:
-
-    visitors to the site -  can look and search horses and breeders;
-                            cannot see new h/b, edit h/b, delete h/b,
-                            cannot see sign up anywhere.
-                            sign up new users is only by email to me and
-                            Nathaniel...this is the way the ATA does it.
-    owners -    can see edit horses they own only (will eventually include
-                  editing horse
-                owner info)
-                cannot see new h/b, edit breeder, delete h/b
-    breeders -  can edit self
-                cannot see new h/b, edit horse, edit breeders other than
-                self cannot see delete horse/breeder, sign up
-    ata -   can see edit horse and edit breeder
-            cannot see new or delete h/b (we should reconsider this when
-            the time comes)
-    admin - me and Nathaniel
-            can see all the things
-</pre>
+- [ ] Improve i18n on Show Horse page (and "Home" button)
 
 
 Testing
 =======
 
-To run the tests, type the following at the command line:
+To run all tests except those in /test/system, type the following at the command line:
 ~~~~
   $ rake test
 ~~~~
 Note: <code>rake test:all</code> was deprecated as of rails 4.2.
 
+To run system tests:
+~~~~
+  $ rake test:system
+~~~~
+
+To run all tests including system tests:
+~~~~
+  $ rake test:system test
+~~~~
+
 To run a single test file, do this:
 ~~~~
-  $ rake test test/features/admin/admin_test.rb
+  $ rake test TEST=test/controllers/home_page_test.rb
 ~~~~
 
 If you get a message like this:
@@ -159,3 +148,29 @@ Fix by running
 ~~~~
   $ rake db:seed
 ~~~~
+
+
+Policy and roles plan - This is currently removed and still under consideration for the future.
+=======
+
+<pre>
+Five roles:
+
+    visitors to the site -  can look and search horses and breeders;
+                            cannot see new h/b, edit h/b, delete h/b,
+                            cannot see sign up anywhere.
+                            sign up new users is only by email to me and
+                            Nathaniel...this is the way the ATA does it.
+    owners -    can see edit horses they own only (will eventually include
+                  editing horse
+                owner info)
+                cannot see new h/b, edit breeder, delete h/b
+    breeders -  can edit self
+                cannot see new h/b, edit horse, edit breeders other than
+                self cannot see delete horse/breeder, sign up
+    ata -   can see edit horse and edit breeder
+            cannot see new or delete h/b (we should reconsider this when
+            the time comes)
+    admin - me and Nathaniel
+            can see all the things
+</pre>

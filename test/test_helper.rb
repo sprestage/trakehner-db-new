@@ -4,6 +4,8 @@ require 'rails/test_help'
 require 'capybara/rails'
 require 'capybara/minitest'
 require 'pry'
+require 'minitest/autorun'
+require 'minitest/pride'
 
 class ActionDispatch::IntegrationTest
   # Make the Capybara DSL available in all integration tests
