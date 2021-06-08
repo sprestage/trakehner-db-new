@@ -1,8 +1,8 @@
 
 task :load_scraped_json  => :environment do
-  records = JSON.parse(File.read('app/assets/data/json/horses_initial_a.json'))
+  records = JSON.parse(File.read('app/assets/data/json/horses_from_ATA_site/horses_initial_a.json'))
   records.each do |record|
-    Horse.create!(record)
+    Horse.create_from_json(record)
   end
 end
 
@@ -21,8 +21,4 @@ task :update_stallion_thumbnails => :environment do
       horse.image.recreate_versions!
     end
   end
-end
-
-task :create_admin => :environment do
-  user = User.create! :email => 'admin@unofficialtrakehnerdatabase.com', :password => ENV['ADMIN_PASSWORD'], :password_confirmation => ENV['ADMIN_PASSWORD'], :role => 'admin'
 end

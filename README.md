@@ -90,6 +90,7 @@ Glad to see the devise gem is still maintained.  For now, I plan to remove autho
 - [ ] Re-implement ATA logo on home page
 - [ ] Re-implement ATA logo on Index Horses page
 - [ ] Improve i18n on Show Horse page (and "Home" button)
+- [ ] There is a stallion, Absalon, who looks to be from Germany whose gender is "V".  Figure out the German translations for Stallion, Gelding, and Mare.  Examine data for FRG or ??? in the Breeder name and check gender for these horses, correcting as needed.  NEED TO DO THIS BEFORE POPULATING HEROKU!!!
 
 
 Testing
@@ -174,3 +175,22 @@ Five roles:
     admin - me and Nathaniel
             can see all the things
 </pre>
+
+
+
+Database info
+=======
+
+~~~~
+  $ psql postgres
+
+  postgres=# create user postgres with password 'postgres';
+  postgres=# alter user postgres with superuser;
+  postgres-# \q
+
+  $ rake db:create
+  $ rake db:migrate
+
+  $ dropdb db/trakehner_dev
+
+~~~~
