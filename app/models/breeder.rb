@@ -26,4 +26,16 @@ class Breeder < ActiveRecord::Base
     return breeder
   end
 
+  def self.id(name)
+    if name.nil?
+      name = "Unknown"
+    end
+    breeder = Breeder.find_by name: name
+    unless breeder
+      breeder = Breeder.new name: name
+      breeder.save!
+    end
+    return breeder[:id]
+  end
+
 end
