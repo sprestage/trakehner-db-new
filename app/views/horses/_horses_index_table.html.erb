@@ -17,8 +17,10 @@
     <tbody>
       <% horses.each do |horse| %>
         <tr id="<%= horse.id %>">
+
           <% if horse.picture %>
             <td><%= image_tag horse.picture %></td>
+
           <% else %>
             <td></td>
           <% end %>

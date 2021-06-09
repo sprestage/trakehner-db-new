@@ -84,13 +84,19 @@ Glad to see the devise gem is still maintained.  For now, I plan to remove autho
 - [x] Confirm functionality of Breeder views (index, show)
 - [x] Re-implement Horse tests
 - [x] Re-implement Breeder tests
-- [ ] Re-implement population of database with horses and breeders from json
-- [ ] Implement ancestry gem for Horses
-- [ ] Re-implement pedigree
+- [x] Re-implement population of database with horses and breeders from json
+- [x] Re-implement pedigree
+- [x] Import ATA approved stallions
+- [x] Re-implement horse images
 - [ ] Re-implement ATA logo on home page
 - [ ] Re-implement ATA logo on Index Horses page
+- [ ] Import json data and ATA stallions on Heroku
 - [ ] Improve i18n on Show Horse page (and "Home" button)
-- [ ] There is a stallion, Absalon, who looks to be from Germany whose gender is "V".  Figure out the German translations for Stallion, Gelding, and Mare.  Examine data for FRG or ??? in the Breeder name and check gender for these horses, correcting as needed.  NEED TO DO THIS BEFORE POPULATING HEROKU!!!
+- [ ] There is a stallion, Absalon, who looks to be from Germany whose gender is "V".  Figure out the German translations for Stallion, Gelding, and Mare.  Examine data for FRG or ??? in the Breeder name and check gender for these horses, correcting as needed.  NEED TO DO THIS BEFORE POPULATING HEROKU!!!\
+- [ ] Fix McGill vs Mcgill.  Consider upcasing.
+- [ ] Bug with progeny.  Probably due to the need for the ancestry gem to handle the multiple foreign key problem with the progeny of Horse.  See the json files for C and A for the stallion Almox Prints J.
+- [ ] Add photo credit, see horse Ballzauber, https://unofficialtrakehnerdb.s3-us-west-2.amazonaws.com/ata_approved_stallions/BallzauberPhotoCredit.txt
+- [ ] Fix location of language toggle.  Should be on far right
 
 
 Testing
@@ -133,6 +139,9 @@ To start postgresql, use a command like this:
   $ pg_ctl -D /usr/local/var/postgres -l ~/postgres-server.log start
 ~~~~
 
+Remember that in binding.pry, you can find where you are in the code with
+`> show-source
+`
 
 Good advice on where to store the various different types of tests: https://guides.rubyonrails.org/testing.html#rails-sets-up-for-testing-from-the-word-go
 
@@ -194,3 +203,8 @@ Database info
   $ dropdb db/trakehner_dev
 
 ~~~~
+
+
+Thumbnails
+=======
+https://alvinalexander.com/mac-os-x/batch-thumbnails-images-photos-free-mac-osx/

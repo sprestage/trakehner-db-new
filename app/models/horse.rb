@@ -81,6 +81,7 @@ class Horse < ActiveRecord::Base
     else
       horse.performance_records_available = true
     end
+
     if horse.save
       # Do nothing if the save is successful.
     else
@@ -103,13 +104,26 @@ class Horse < ActiveRecord::Base
     return parent
   end
 
-  def self.import_image_from_remote( record )
+  def self.import_image_from_remote( record, gender )
     horse = Horse.find_by name: record[ "name" ]
     unless horse
       horse = Horse.new
       horse.name = record[ "name" ]
     end
+    horse.sex = gender
     horse.image = record[ "image" ]
+    horse.picture = record[ "picture" ]
+
+    if horse.breeder.nil?
+      if horse.breeder_id.nil?
+        breeder = Breeder.where( name: "Unknown" )[0]
+        horse.breeder = breeder
+        horse.breeder_id = Breeder.id( "Unknown" )
+      else
+        breeder = Breeder.where( id: horse.breeder_id )[0]
+        horse.breeder = breeder
+      end
+    end
 
     if horse.save
       # Do nothing if the save is successful.
