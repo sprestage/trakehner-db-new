@@ -88,15 +88,17 @@ Glad to see the devise gem is still maintained.  For now, I plan to remove autho
 - [x] Re-implement pedigree
 - [x] Import ATA approved stallions
 - [x] Re-implement horse images
+- [x] Import json data and ATA stallions on Heroku
+- [x] Bug with progeny.  Probably due to the need for the ancestry gem to handle the multiple foreign key problem with the progeny of Horse.  See the json files for C and A for the stallion Almox Prints J.  Update: Good news.  Offspring/Progeny is working beautifully.  belongs_to automatically carries the association in the other direction, so a has_many for offspring within the horse model is not needed and has been removed.  The worrisome indicator I saw was only due to not having imported all the json files yet.
+- [ ] Import all json data on Heroku, letter by letter, trying to avoid maxing out the database inserts for the free level of database.
+- [ ] Re-implement home page with ATA approved stallion carousel
 - [ ] Re-implement ATA logo on home page
 - [ ] Re-implement ATA logo on Index Horses page
-- [ ] Import json data and ATA stallions on Heroku
 - [ ] Improve i18n on Show Horse page (and "Home" button)
 - [ ] There is a stallion, Absalon, who looks to be from Germany whose gender is "V".  Figure out the German translations for Stallion, Gelding, and Mare.  Examine data for FRG or ??? in the Breeder name and check gender for these horses, correcting as needed.  NEED TO DO THIS BEFORE POPULATING HEROKU!!!\
 - [ ] Fix McGill vs Mcgill.  Consider upcasing.
-- [ ] Bug with progeny.  Probably due to the need for the ancestry gem to handle the multiple foreign key problem with the progeny of Horse.  See the json files for C and A for the stallion Almox Prints J.
 - [ ] Add photo credit, see horse Ballzauber, https://unofficialtrakehnerdb.s3-us-west-2.amazonaws.com/ata_approved_stallions/BallzauberPhotoCredit.txt
-- [ ] Fix location of language toggle.  Should be on far right
+- [ ] Fix location of language toggle.  Should be on far right.  Hmmm.  Fixed on Heroku (in production), with correct fonts which are all missing locally.  Priority on this is much lower as a result but should be looked into at some point.
 
 
 Testing

@@ -1,6 +1,6 @@
 
 task :load_scraped_json  => :environment do
-  records = JSON.parse( File.read( 'app/assets/data/json/horses_from_ATA_site/horses_initial_x.json' ) )
+  records = JSON.parse( File.read( 'app/assets/data/json/horses_from_ATA_site/horses_initial_y.json' ) )
   records.each do | record |
     Horse.create_from_json( record )
   end
