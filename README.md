@@ -7,7 +7,23 @@
 
 Lastest News
 =======
-**June 2021**
+**Mid June 2021**
+The Unofficial Trakehner Database site has been restored, or rather, re-implemented.  
+
+The data is from 2013 and is therefore stale.  In the coming month, I will investigate
+taking a new snapshot of the ATA website to bring this site up to date.  The current
+database uses Heroku's Hobby-dev level for data storage which is free.  However, the
+maximum number of entries for this level of database is 10,000.  The UTDB site has
+over 23,000 entries, so you can see the problem.  The next level of Heroku database
+costs $9/month, which isn't terrible, but is a price I cannot currently pay.  Here is
+hoping for a brighter future with the ability to upgrade as needed.  I plan to work
+on scraping the ATA data into json files to prepare for this in the meantime.  
+
+I also wonder what the interest level would be in my scraping the Trakehner Verband
+site for data to add to this site.
+
+
+**Early June 2021**
 The Unofficial Trakehner Database site has been down for a while now.  I would like
 to extend my apologies to those who use the site.  Technology continues to grow and
 change, which in this case, took down the UTDB site when the hosting platform
@@ -90,8 +106,10 @@ Glad to see the devise gem is still maintained.  For now, I plan to remove autho
 - [x] Re-implement horse images
 - [x] Import json data and ATA stallions on Heroku
 - [x] Bug with progeny.  Probably due to the need for the ancestry gem to handle the multiple foreign key problem with the progeny of Horse.  See the json files for C and A for the stallion Almox Prints J.  Update: Good news.  Offspring/Progeny is working beautifully.  belongs_to automatically carries the association in the other direction, so a has_many for offspring within the horse model is not needed and has been removed.  The worrisome indicator I saw was only due to not having imported all the json files yet.
-- [ ] Import all json data on Heroku, letter by letter, trying to avoid maxing out the database inserts for the free level of database.  J, Q, U, X, Y
-- [ ] Re-implement home page with ATA approved stallion carousel
+- [x] Import all json data on Heroku, letter by letter, trying to avoid maxing out the database inserts for the free level of database.  Over 23,000 inserts into database.  Heroku is not happy and will permit no others, but the site is stable without the need to change the DB (for now).
+- [x] Re-implement home page with ATA approved stallion carousel
+- [ ] Need to upgrade from Heroku's free Hobby-dev database to the $9/month Hobby-basic database.  This should be done when the updated horse json data scraping is performed on the ATA website.
+- [ ] Re-scrape the ATA website to get the new horses.  Probably need to scrape all data, then the rake script will need to check both that the horse/breeder exists and also that any data for that horse/breeder has changed.  If data is unchanged, the save should not be made.  
 - [ ] Re-implement ATA logo on home page
 - [ ] Re-implement ATA logo on Index Horses page
 - [ ] Improve i18n on Show Horse page (and "Home" button)
