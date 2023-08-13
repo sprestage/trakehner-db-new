@@ -7,6 +7,15 @@
 
 Lastest News
 =======
+
+**Mid August 2023**
+The Heroku deployment is no longer functional due to sunsetting.
+
+Removing from portfolio for now.  The original intent was to create examples of my work while I had no industry experience.  Now the I've 10 years experience, this project can simply be removed so as to stop displaying non-working projects in my overall CV.
+
+As soon as I have the convenient time, I still want to pick this project back up, with updated Trakehner data, as I have 10 years to catch up with.  To that end, I am happy to report that the current master branch of trakehner-db-new works successfully on my local.
+
+
 **Mid June 2021**
 The Unofficial Trakehner Database site has been restored, or rather, re-implemented.  
 
