@@ -15,6 +15,19 @@ Removing from portfolio for now.  The original intent was to create examples of 
 
 As soon as I have the convenient time, I still want to pick this project back up, with updated Trakehner data, as I have 10 years to catch up with.  To that end, I am happy to report that the current master branch of trakehner-db-new works successfully on my local.
 
+This is the LinkedIn entry:
+
+Unofficial Trakehner Database
+http://www.unofficialtrakehnerdatabase.com
+A Ruby on Rails website designed to address the challenges facing the Trakehner horse enthusiast when researching various horse statistics with emphasis for Trakehner breeders.  This Rails 4 application uses Ruby, Rails, HTML, CSS, Javascript, jQuery, Twitter Bootstrap, PostgreSQL, authentication, authorization, and many gems to implement the various needed features.  
+
+• Use of AWS for CNAME, DNS, and S3 hosting of the user uploadable horse images.
+• Security concerns improved through use of Brakeman, keeping keys out of Github, and sanitizing user entered data before storage to database.
+• Devise for authenitication. Pundit and Omniauth for authorization according to policies and roles.
+• Gemnasium used to keep track of new gems.
+• Added basic i18n support for German.
+• Implemented tables using simple_form gem for simplicity and straightforwardness of page design.
+
 
 **Mid June 2021**
 The Unofficial Trakehner Database site has been restored, or rather, re-implemented.  
